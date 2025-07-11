@@ -1,0 +1,251 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: url('../assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 30px;
+    color: #2f3640;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.6em;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* glow putih */
+    letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
+
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.35); /* semi-transparan */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px); /* efek blur seperti kaca */
+    -webkit-backdrop-filter: blur(10px);
+}
+
+table:hover {
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+}
+
+th, td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f1f2f6;
+    font-size: 0.95rem;
+}
+
+th {
+    background-color: rgba(241, 242, 246, 0.8); /* sedikit transparan */
+    font-weight: 600;
+    color: #2f3640;
+}
+
+td {
+    color: #444;
+}
+
+tr:hover {
+    background-color: rgba(249, 249, 249, 0.8);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        top: 12px;
+        font-weight: bold;
+        color: #888;
+        text-align: left;
+    }
+
+    th {
+        display: none;
+    }
+}
+
+/* Tombol Tambah Booking */
+.action-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.btn-add {
+    background-color: #00a8ff;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 168, 255, 0.3);
+}
+
+.btn-add:hover {
+    background-color: #0097e6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 168, 255, 0.35);
+}
+
+/* Badge Status & Pembayaran */
+.badge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85em;
+    font-weight: 500;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.badge-confirmed {
+    background-color: #d0ebff;
+    color: #1c7ed6;
+}
+
+.badge-pending {
+    background-color: #fff3bf;
+    color: #f59f00;
+}
+
+.badge-completed {
+    background-color: #d3f9d8;
+    color: #37b24d;
+}
+
+.badge-cancelled,
+.badge-gagal {
+    background-color: #ffe3e3;
+    color: #fa5252;
+}
+
+.badge-dibayar {
+    background-color: #d3f9d8;
+    color: #2b8a3e;
+}
+
+.badge-belum_dibayar {
+    background-color: #fff3bf;
+    color: #e67700;
+}
+
+/* Form Style */
+.form-box {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.form-box label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    color: #2f3640;
+}
+
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.form-box button {
+    margin-top: 20px;
+    background-color: #00a8ff;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background-color: #0097e6;
+}
+
+/* Notifikasi */
+.alert-success {
+    background-color: #d3f9d8;
+    color: #2f9e44;
+    border: 1px solid #b2f2bb;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.alert-hidden {
+    opacity: 0;
+}
+
+/* Tombol Aksi */
+.btn-action {
+    padding: 8px 12px;
+    font-size: 0.85em;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 6px;
+    color: white;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.btn-action:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+.btn-delete {
+    background-color: #ff4757;
+}
+
+.btn-edit {
+    background-color: #1e90ff;
+}
